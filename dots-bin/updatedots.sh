@@ -23,7 +23,8 @@ echo -e "----------\n"
 echo -e "Backing up some files..."
 
 if [ -f ~/.bashrc ]; then
-  mv ~/.bashrc ~/.bashrc.bak
+  cp ~/.bashrc ~/.bashrc.bak
+  rm ~/.bashrc
 fi
 
 if [ -f ~/.config/xfce4/xfconf/xfce-perchannel-xml/ ]; then
