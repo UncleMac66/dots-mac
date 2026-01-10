@@ -25,4 +25,8 @@
   <property name="overlay-scrolling" type="bool" value="true"/>
   <property name="misc-maximize-default" type="bool" value="true"/>
   <property name="misc-show-unsafe-paste-dialog" type="bool" value="false"/>
+  <property name="title-mode" type="string" value="TERMINAL_TITLE_REPLACE"/>
+  <property name="misc-cursor-blinks" type="bool" value="true"/>
+  <property name="dropdown-keep-open-default" type="bool" value="true"/>
+  <property name="dropdown-toggle-focus" type="bool" value="false"/>
 </channel>

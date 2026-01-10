@@ -8,11 +8,11 @@
 let mapleader = " "
 
 " saving and quitting
-nnoremap <leader>w :w<CR>
-nnoremap <leader>ww :wa<CR>
-nnoremap <leader>wq :wq<CR>
-nnoremap <leader>x :q!<CR>
-nnoremap <leader><leader> <C-w>w
+nnoremap <silent>  <leader>w :w<CR>
+nnoremap <silent>  <leader>ww :wa<CR>
+nnoremap <silent>  <leader>wq :wq<CR>
+nnoremap <silent>  :qq :qa!<CR>
+nnoremap <silent>  <leader>x :q!<CR>
 
 " toggle line numbers
 nnoremap <leader>nn :call ToggleNumber()<CR>
@@ -25,7 +25,12 @@ nnoremap <leader>r :source ~/.vimrc<CR>:echo "Config Reloaded!" <CR>
 
 " custom calls for packages
 nnoremap <leader>f :NERDTreeToggle<CR>
-nnoremap <leader>q :FloatermToggle<CR>
+tnoremap   <silent>   <C-H>    <C-\><C-n>:FloatermNew<CR>
+tnoremap   <silent>   <C-J>    <C-\><C-n>:FloatermNext<CR>
+tnoremap   <silent>   <C-K>    <C-\><C-n>:FloatermPrev<CR>
+tnoremap   <silent>   <C-X>    <C-\><C-n>:FloatermKill<CR>
+nnoremap   <silent>   <C-Q>   :FloatermToggle<CR>
+tnoremap   <silent>   <C-Q>   <C-\><C-n>:FloatermToggle<CR>
 
 " Toggle comment (line or selection)
 nnoremap <Leader>c  <Plug>NERDCommenterToggle
@@ -53,6 +58,8 @@ let g:NERDCompactSexyComs = 1              " compact block comments
 if isdirectory(expand('~/.vim/pack/code/start/nerdcommenter/doc'))
   exe 'helptags' expand('~/.vim/pack/code/start/nerdcommenter/doc')
 endif
+
+" Floaterm
 
 """"""""""""""""""""""""""""""""""""""
 " Set theme

@@ -21,12 +21,17 @@ echo -e "\n----------"
 echo -e "Attempting to stow changes..."
 echo -e "----------\n"
 echo -e "Backing up some files..."
-mv ~/.bashrc ~/.bashrc.bak
+
+if [ -f ~/.bashrc ]; then
+  mv ~/.bashrc ~/.bashrc.bak
+fi
+
 if [ -f ~/.config/xfce4/xfconf/xfce-perchannel-xml/ ]; then
-  for i in $(cat ~/dots-machrome/.config/xfce4/xfconf/xfce-perchannel-xml/files); do
+  for i in $(cat ~/dots-mac/.config/xfce4/xfconf/xfce-perchannel-xml/files); do
   	mv ~/.config/xfce4/xfconf/xfce-perchannel-xml/$i ~/.config/xfce4/xfconf/xfce-perchannel-xml/$i.bak
   done
 fi
+
 stow --ignore .gitignore . && echo -e "Success!"
 if [[ "$?" -gt 0 ]]; then
   echo -e "ERROR! Stowing!"

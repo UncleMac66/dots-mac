@@ -60,6 +60,10 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “mabelsyrup” active: mabelsyrup (75%)"/>
+        <value type="string" value="wi-fi network connection “mabelsyrup” active: mabelsyrup (78%)"/>
+        <value type="string" value="wi-fi network connection “mabelsyrup” active: mabelsyrup (81%)"/>
+        <value type="string" value="wi-fi network connection “mabelsyrup” active: mabelsyrup (65%)"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="polkit-mate-authentication-agent-1"/>
         <value type="string" value="kupfer.py"/>
