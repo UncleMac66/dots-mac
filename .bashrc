@@ -108,7 +108,7 @@ export PROMPT_DIRTRIM=3
 [ -d ~/bin ] && export PATH=~/bin:$PATH
 [ -d ~/scripts ] && export PATH=~/scripts:$PATH
 
-[[ -e "/home/mac/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/mac/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh"
+[[ -e "/home/$USER/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/$USER/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
