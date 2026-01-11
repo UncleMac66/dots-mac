@@ -61,6 +61,12 @@ if isdirectory(expand('~/.vim/pack/code/start/nerdcommenter/doc'))
 endif
 
 " Floaterm
+" Set floaterm window's background to black
+hi Floaterm guibg=black
+" Set floating window border line color to cyan, and background to orange
+hi FloatermBorder guibg=orange guifg=cyan
+
+
 
 """"""""""""""""""""""""""""""""""""""
 " Set theme
