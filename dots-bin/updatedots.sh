@@ -29,7 +29,8 @@ fi
 
 if [ -f ~/.config/xfce4/xfconf/xfce-perchannel-xml/ ]; then
   for i in $(cat ~/dots-mac/.config/xfce4/xfconf/xfce-perchannel-xml/files); do
-  	mv ~/.config/xfce4/xfconf/xfce-perchannel-xml/$i ~/.config/xfce4/xfconf/xfce-perchannel-xml/$i.bak
+  	cp -v  ~/.config/xfce4/xfconf/xfce-perchannel-xml/$i ~/.config/xfce4/xfconf/xfce-perchannel-xml/$i.bak
+  	mv -v  ~/.config/xfce4/xfconf/xfce-perchannel-xml/$i ~/dots-mac/.config/xfce4/xfconf/xfce-perchannel-xml/$i
   done
 fi
 

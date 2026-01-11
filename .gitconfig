@@ -1,8 +1,8 @@
 [user]
-	email = macstephen66@gmail.com
-	name = unclemac66
+	      email = macstephen66@gmail.com
+	      name = unclemac66
 [init]
-	defaultBranch = main
+      	defaultBranch = main
 [column]
         ui = auto
 [branch]

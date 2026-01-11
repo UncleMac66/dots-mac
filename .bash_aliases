@@ -1,5 +1,4 @@
 # aliases for neovim
-alias nv='nvim'
 alias vi='vim'
 
 # alias for console history w/ fzf
@@ -13,3 +12,4 @@ alias cm='cmatrix -sb'
 
 # alias for cd to previous dir
 alias cdb='cd "$OLDPWD"'
+alias cdd='cd "$OLDPWD"'

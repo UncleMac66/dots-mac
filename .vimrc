@@ -8,11 +8,12 @@
 let mapleader = " "
 
 " saving and quitting
-nnoremap <silent>  <leader>w :w<CR>
-nnoremap <silent>  <leader>ww :wa<CR>
-nnoremap <silent>  <leader>wq :wq<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>ww :wa<CR>
+nnoremap <leader>wq :wq<CR>
 nnoremap <silent>  :qq :qa!<CR>
 nnoremap <silent>  <leader>x :q!<CR>
+nnoremap <silent>  <leader><leader> <C-w>w
 
 " toggle line numbers
 nnoremap <leader>nn :call ToggleNumber()<CR>

@@ -62,6 +62,10 @@ else
     install_font
 fi
 
+say "installing ocicli..."
+updateocicli.sh --accept-all-defaults 
+
+
 
 
 
