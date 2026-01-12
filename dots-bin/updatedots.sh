@@ -3,7 +3,7 @@
 if [ "$(basename "$PWD")" != "dots-machrome" ]; then 
   cd ~/dots-mac
   if [[ "$?" -gt 0 ]]; then
-    echo -e "Can't find dots-machrome directory!"
+    echo -e "Can't find dots-mac directory!"
     exit 1
   fi
 fi
@@ -20,6 +20,8 @@ fi
 echo -e "\n----------"
 echo -e "Attempting to stow changes..."
 echo -e "----------\n"
+echo -e "Cleaning Home directory of any dead symlinks..."
+find ~ -xtype l -delete
 echo -e "Backing up some files req'd for xfce de..."
 
 if [ -d ~/.config/xfce4/xfconf/xfce-perchannel-xml/ ]; then
