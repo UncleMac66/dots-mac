@@ -10,10 +10,10 @@ if [[ "${ID,,}" != "debian" && "${ID,,}" != "ubuntu" ]]; then
   exit 1
 fi
 
-if [ "$(basename "$PWD")" != "dots-machrome" ]; then 
-  cd ~/dots-machrome
+if [ "$(basename "$PWD")" != "dots-mac" ]; then 
+  cd ~/dots-mac
   if [[ "$?" -gt 0 ]]; then
-    echo -e "Can't find dots-machrome directory!"
+    echo -e "Can't find dots-mac directory!"
     exit 1
   fi
 fi

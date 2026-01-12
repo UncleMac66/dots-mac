@@ -30,6 +30,9 @@ shopt -s globstar
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# Set Locale
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -120,3 +123,7 @@ shopt -s dirspell
 
 
 complete -C /usr/bin/terraform terraform
+
+export PATH=/home/ubuntu/bin:$PATH
+
+[[ -e "/home/ubuntu/lib/oracle-cli/lib/python3.10/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/ubuntu/lib/oracle-cli/lib/python3.10/site-packages/oci_cli/bin/oci_autocomplete.sh"
