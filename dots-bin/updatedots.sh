@@ -21,7 +21,9 @@ echo -e "\n----------"
 echo -e "Attempting to stow changes..."
 echo -e "----------\n"
 echo -e "Cleaning Home directory of any dead symlinks..."
+
 find ~ -xtype l -delete
+
 echo -e "Backing up some files req'd for xfce de..."
 
 if [ -d ~/.config/xfce4/xfconf/xfce-perchannel-xml/ ]; then
@@ -31,9 +33,9 @@ if [ -d ~/.config/xfce4/xfconf/xfce-perchannel-xml/ ]; then
   done
 fi
 
-stow --ignore .gitignore . && echo -e "Success!"
+stow --ignore .gitignore . && echo -e "Stowing is successful!"
 if [[ "$?" -gt 0 ]]; then
-  echo -e "ERROR! Stowing!"
+  echo -e "ERROR! Stowing did not complete successfully!"
   exit 1
 fi
 

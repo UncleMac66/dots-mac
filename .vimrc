@@ -7,12 +7,16 @@
 """"""""""""""""""""""""""""""""""""""
 let mapleader = " "
 
-" saving and quitting
+" Saving
 nnoremap <leader>w :w<CR>
-nnoremap <leader>ww :wa<CR>
+nnoremap <leader>ww :wa<CR>:echo "All Files Saved!" <CR>
 nnoremap <leader>wq :wq<CR>
+
+" Quitting
 nnoremap <silent>  :qq :qa!<CR>
 nnoremap <silent>  <leader>x :q!<CR>
+
+" Move cursor to next window by double spacing
 nnoremap <silent>  <leader><leader> <C-w>w
 
 " toggle line numbers
@@ -50,7 +54,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
 " NERD Commenter settings
-let g:NERDTrimTrailingWhitespace = 1        " trim trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1       " trim trailing whitespace when uncommenting
 let g:NERDSpaceDelims = 1                  " add a space after delimiters: // comment
 let g:NERDDefaultAlign = 'left'            " align left
 let g:NERDCompactSexyComs = 1              " compact block comments
@@ -62,9 +66,9 @@ endif
 
 " Floaterm
 " Set floaterm window's background to black
-hi Floaterm guibg=black
+" hi Floaterm guibg=black
 " Set floating window border line color to cyan, and background to orange
-hi FloatermBorder guibg=orange guifg=cyan
+" hi FloatermBorder guibg=orange guifg=cyan
 
 
 
@@ -83,6 +87,7 @@ endif
 catch
 " if jellybeans isn't available so just use on okay builtin theme
 colorscheme desert
+:echo "Jellybeans not found or configured! Defaulting to to builtin desert colorscheme"<CR>
 endtry
 
 """"""""""""""""""""""""""""""""""""""
@@ -97,7 +102,7 @@ set cursorline
 set magic
 set smartcase
 set incsearch
-set matchpairs=(:),{:},[:],“:”,‘:’
+set matchpairs=(:),{:},[:],":",':'
 
 """"""""""""""""""""""""""""""""""""""
 " wildmenu settings
