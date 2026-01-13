@@ -30,12 +30,14 @@ nnoremap <leader>r :source ~/.vimrc<CR>:echo "Config Reloaded!" <CR>
 
 " custom calls for packages
 nnoremap <leader>f :NERDTreeToggle<CR>
-tnoremap   <silent>   <C-H>    <C-\><C-n>:FloatermNew<CR>
-tnoremap   <silent>   <C-J>    <C-\><C-n>:FloatermNext<CR>
-tnoremap   <silent>   <C-K>    <C-\><C-n>:FloatermPrev<CR>
-tnoremap   <silent>   <C-X>    <C-\><C-n>:FloatermKill<CR>
-nnoremap   <silent>   <C-Q>   :FloatermToggle<CR>
-tnoremap   <silent>   <C-Q>   <C-\><C-n>:FloatermToggle<CR>
+tnoremap <silent> <C-H> <C-\><C-n>:FloatermNew<CR>
+tnoremap <silent> <C-J> <C-\><C-n>:FloatermNext<CR>
+tnoremap <silent> <C-K> <C-\><C-n>:FloatermPrev<CR>
+tnoremap <silent> <C-X> <C-\><C-n>:FloatermKill<CR>
+tnoremap <silent> <C-L> <C-\><C-n>:FloatermUpdate --position=bottomright<CR>
+tnoremap <silent> <C-L><C-L> <C-\><C-n>:FloatermUpdate --position=topright<CR>
+nnoremap <silent> <C-Q> :FloatermToggle<CR>
+tnoremap <silent> <C-Q> <C-\><C-n>:FloatermToggle<CR>
 
 " Toggle comment (line or selection)
 nnoremap <Leader>c  <Plug>NERDCommenterToggle
@@ -69,8 +71,6 @@ endif
 " hi Floaterm guibg=black
 " Set floating window border line color to cyan, and background to orange
 " hi FloatermBorder guibg=orange guifg=cyan
-
-
 
 """"""""""""""""""""""""""""""""""""""
 " Set theme
