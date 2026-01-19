@@ -124,6 +124,3 @@ shopt -s dirspell
 
 complete -C /usr/bin/terraform terraform
 
-export PATH=/home/ubuntu/bin:$PATH
-
-[[ -e "/home/ubuntu/lib/oracle-cli/lib/python3.10/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/ubuntu/lib/oracle-cli/lib/python3.10/site-packages/oci_cli/bin/oci_autocomplete.sh"

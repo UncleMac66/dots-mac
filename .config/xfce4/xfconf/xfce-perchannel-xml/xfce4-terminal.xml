@@ -29,4 +29,5 @@
   <property name="misc-cursor-blinks" type="bool" value="true"/>
   <property name="dropdown-keep-open-default" type="bool" value="true"/>
   <property name="dropdown-toggle-focus" type="bool" value="false"/>
+  <property name="kinetic-scrolling" type="bool" value="true"/>
 </channel>

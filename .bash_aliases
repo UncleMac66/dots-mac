@@ -13,3 +13,7 @@ alias cm='cmatrix -sb'
 # alias for cd to previous dir
 alias cdb='cd "$OLDPWD"'
 alias cdd='cd "$OLDPWD"'
+
+# Update packages
+alias aptup='sudo apt update && sudo apt upgrade -y'
+
