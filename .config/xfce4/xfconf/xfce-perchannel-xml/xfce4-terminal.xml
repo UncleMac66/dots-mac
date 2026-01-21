@@ -2,7 +2,7 @@
 
 <channel name="xfce4-terminal" version="1.0">
   <property name="font-name" type="string" value="Hack Nerd Font 12"/>
-  <property name="color-foreground" type="string" value="#839496"/>
+  <property name="color-foreground" type="string" value="#f6f6f5f5f4f4"/>
   <property name="color-background" type="string" value="#0c0a27cb46d3"/>
   <property name="color-background-vary" type="bool" value="false"/>
   <property name="color-cursor-foreground" type="string" value=""/>
