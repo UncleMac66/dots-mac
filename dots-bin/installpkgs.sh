@@ -52,6 +52,7 @@ sudo apt update
 
 # pkgs stored in installpkgs
 # apt install all pkgs in list
+cd ~/dots-mac/dots-bin
 sudo xargs -a installpkgs apt install -y
 say "Done installing/updating package list..."
 
@@ -62,8 +63,8 @@ else
     install_font
 fi
 
-say "installing ocicli..."
-updateocicli.sh --accept-all-defaults 
+say "Installing ocicli..."
+./updateocicli.sh --accept-all-defaults 
 
 
 
