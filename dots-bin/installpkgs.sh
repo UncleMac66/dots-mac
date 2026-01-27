@@ -18,7 +18,6 @@ if [ "$(basename "$PWD")" != "dots-mac" ]; then
   fi
 fi
 
-
 # Define the font directory and the font file name
 FONT_DIR="$HOME/.local/share/fonts"
 FONT_NAME="Hack Nerd Font.ttf"
@@ -57,19 +56,15 @@ sudo xargs -a installpkgs apt install -y
 say "Done installing/updating package list..."
 
 # check if hack nerd font exists and install if not
-if fc-list | grep -i "Hack Nerd Font"; then
+if fc-list | grep -i "Hack Nerd Font" &> /dev/null; then
     say "Hack Nerd Font already Installed"
 else
     install_font
 fi
 
-say "Installing ocicli..."
-./updateocicli.sh --accept-all-defaults 
-
-
-
-
-
-
-
-
+if which oci &> /dev/null; then
+  say "ocicli already installed..."
+else
+  say "Installing ocicli..."
+  ./updateocicli.sh --accept-all-defaults 
+fi
