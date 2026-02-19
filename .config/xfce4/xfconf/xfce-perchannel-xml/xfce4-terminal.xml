@@ -30,4 +30,6 @@
   <property name="dropdown-keep-open-default" type="bool" value="true"/>
   <property name="dropdown-toggle-focus" type="bool" value="false"/>
   <property name="kinetic-scrolling" type="bool" value="true"/>
+  <property name="dropdown-show-borders" type="bool" value="false"/>
+  <property name="dropdown-status-icon" type="bool" value="true"/>
 </channel>
