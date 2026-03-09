@@ -1,8 +1,15 @@
 """"""""""""""""""""""""""""""""""""""
-" Mac's Vim config                v1.0
+" Mac's Vim config                v1.1
 """"""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""
+" Changelog
+" - v1.0   initial config
+" - v1.1   add vim-which-key
+"          add sudo and remove blank lines funcs
+"
+"
+"
+"
+"""""""""""""""""""""""""""""""""""""
 " Configure leader and mappings
 """"""""""""""""""""""""""""""""""""""
 let mapleader = " "
@@ -13,7 +20,7 @@ nnoremap <leader>ww :wa<CR>:echo "All Files Saved!" <CR>
 nnoremap <leader>wq :wq<CR>
 
 " Quitting
-nnoremap <silent>  :qq :qa!<CR>
+nnoremap <silent>  <leader>qq :qa!<CR>
 nnoremap <silent>  <leader>x :q!<CR>
 
 " Move cursor to next window by double spacing
@@ -48,9 +55,10 @@ filetype plugin on
 
 """"""""""""""""""""""""""""""""""""""
 " Load/Configure Packages
-""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""r""""""""""""""
 " nerdtree
 packadd! nerdtree
+
 " load nerdtree by default when no file is given to vim
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
@@ -61,9 +69,8 @@ let g:NERDSpaceDelims = 1                  " add a space after delimiters: // co
 let g:NERDDefaultAlign = 'left'            " align left
 let g:NERDCompactSexyComs = 1              " compact block comments
 
-
 if isdirectory(expand('~/.vim/pack/code/start/nerdcommenter/doc'))
-  exe 'helptags' expand('~/.vim/pack/code/start/nerdcommenter/doc')
+exe 'helptags' expand('~/.vim/pack/code/start/nerdcommenter/doc')
 endif
 
 " Floaterm
@@ -71,6 +78,35 @@ endif
 " hi Floaterm guibg=black
 " Set floating window border line color to cyan, and background to orange
 " hi FloatermBorder guibg=orange guifg=cyan
+
+""""""""""""""""""""""""""""""""""""""
+" whichkey setup and mappings/dictionary
+""""""""""""""""""""""""""""""""""""""
+
+set timeoutlen=500
+packadd! vim-which-key
+
+nnoremap <silent> <leader> :WhichKey '<Space>' <CR>
+
+" which-key REGISTRATIONS (separate calls for prefixes/modes)
+" initialize which-key maps per prefix/mode
+let g:which_key_map      = {}
+
+" Leader (space) - Normal/Visual mode groups
+let g:which_key_map['w'] = {'name' : '+Save'}
+let g:which_key_map['ww'] = 'save all'
+let g:which_key_map['wq'] = 'save & quit'
+let g:which_key_map['q']  = 'quit!'
+let g:which_key_map['qq']  = 'quit all!'
+let g:which_key_map['x']  = 'quit!'
+let g:which_key_map['nn'] = 'toggle numberlines'
+let g:which_key_map['t']  = 'new tab'
+let g:which_key_map['r']  = 'reload config'
+let g:which_key_map['f']  = 'NERDTree'
+let g:which_key_map['sw'] = 'Save with sudo'
+let g:which_key_map['tb'] = 'Toggle blank lines'
+call which_key#register(' ', 'g:which_key_map', 'n')  " prefix, map-var, mode=n
+
 
 """"""""""""""""""""""""""""""""""""""
 " Set theme
@@ -82,7 +118,7 @@ let g:jellybeans_overrides = {
 \    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
 \}
 if has('termguicolors') && &termguicolors
-    let g:jellybeans_overrides['background']['guibg'] = 'none'
+let g:jellybeans_overrides['background']['guibg'] = 'none'
 endif
 catch
 " if jellybeans isn't available so just use on okay builtin theme
@@ -129,6 +165,32 @@ set smarttab      " Inserts blanks on a <Tab> key (as per sw, ts and sts).
 """"""""""""""""""""""""""""""""""""""
 " Functions **************************
 """"""""""""""""""""""""""""""""""""""
+" Function to remove all whitespace
+let g:blank_lines_removed = 0
+
+function! ToggleBlankLines()
+if g:blank_lines_removed == 0
+    :g/^$/d
+    let g:blank_lines_removed = 1
+    echo "Blank lines removed"
+else
+    :undo
+    let g:blank_lines_removed = 0
+    echo "Blank lines restored"
+endif
+endfunction
+
+command! ToggleBlankLines call ToggleBlankLines()
+nnoremap <leader>tb :call ToggleBlankLines()<CR>
+
+" Function to write when you need sudo but forget to open vim with sudo
+function! SudoWrite()
+:w !sudo tee % > /dev/null
+endfunction
+
+command! SudoWrite call SudoWrite()
+nnoremap <leader>sw :call SudoWrite()<CR>
+
 
 " Function to switch back to spaces if needed
 function! UseSpaces()
