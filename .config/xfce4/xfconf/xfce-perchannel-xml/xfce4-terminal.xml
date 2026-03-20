@@ -32,4 +32,5 @@
   <property name="kinetic-scrolling" type="bool" value="true"/>
   <property name="dropdown-show-borders" type="bool" value="false"/>
   <property name="dropdown-status-icon" type="bool" value="true"/>
+  <property name="misc-confirm-close" type="bool" value="false"/>
 </channel>
