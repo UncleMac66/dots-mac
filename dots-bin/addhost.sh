@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Ask for environment type
-echo "Select environment (slurm/oke):"
+echo "Select environment (1:slurm/2:oke):"
 read env
 
 if [[ "$env" == "oke" ]] || [[ "$env" -eq 2 ]]; then
+  echo "Adding OKE stack Host"
   # Ensure ~/.ssh exists
   mkdir -p ~/.ssh
   chmod 700 ~/.ssh
@@ -85,6 +86,7 @@ if [[ "$env" == "oke" ]] || [[ "$env" -eq 2 ]]; then
 
 elif [[ "$env" == "slurm" ]] || [[ "$env" -eq 1 ]]; then
 
+  echo "Adding SLURM stack Host"
   if [ ! -f ~/.ssh/config ]; then
     touch ~/.ssh/config
     chmod 600 ~/.ssh/config
