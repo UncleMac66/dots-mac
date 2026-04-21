@@ -124,4 +124,3 @@ shopt -s dirspell
 
 complete -C /usr/bin/terraform terraform
 
-. "$HOME/.cargo/env"
